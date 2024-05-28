@@ -5,6 +5,13 @@ const products = (state, action) => {
                 ...state,
                 products: action.payload,
             };
+        case "ADD_TO_CART":
+            const addProductToCart = [...state.cart, action.payload];
+            localStorage.setItem('Cart', JSON.stringify(addProductToCart));
+            return {
+                ...state,
+                cart: addProductToCart,
+            }
         default:
             return state;
     }

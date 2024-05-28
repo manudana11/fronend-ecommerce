@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './Header.scss'
+import { ProductsContext } from '../../context/ProductContext/ProductState'
 
 const Header = () => {
+  const { cart } = useContext(ProductsContext);
+  const cartCounter = cart.length;
   return (
     <header className="header">
       <div className="logo">
@@ -19,7 +22,7 @@ const Header = () => {
         </Link>
         <Link to="/cart" className="cart-icon">
           <img src="https://cdn-icons-png.flaticon.com/512/4379/4379539.png" alt="Carrito de Compras" />
-          <span className="cart-count">1</span>
+          <span className="cart-count">{cartCounter}</span>
         </Link>
       </div>
     </header>
