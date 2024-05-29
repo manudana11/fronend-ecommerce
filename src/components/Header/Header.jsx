@@ -17,7 +17,7 @@ const Header = () => {
         <span><Link to="/offers">Offers</Link></span>
       </nav>
       <div className="user-cart">
-        <Link to="/profile" className="user-icon">
+        <Link to="/users/login" className="user-icon">
           <img src="https://cdn-icons-png.freepik.com/512/64/64573.png" alt="Usuario" />
         </Link>
         <Link to="/cart" className="cart-icon">

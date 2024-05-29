@@ -7,12 +7,14 @@ const initialState = {
     cart: JSON.parse(localStorage.getItem('Cart')) || [],
 };
 
+const API_URL = 'http://localhost:3000/products/';
+
 export const ProductsContext = createContext(initialState);
 
 export const ProductsProvider = ({children}) => {
     const [state, dispatch] = useReducer(ProductReducer, initialState);
     const getProducts = async () => {
-        const res = await axios.get("http://localhost:3000/products/");
+        const res = await axios.get(API_URL);
         dispatch({
             type: "GET_PRODUCTS",
             payload: res.data,
