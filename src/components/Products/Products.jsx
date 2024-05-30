@@ -31,11 +31,11 @@ const Products = () => {
     }
     const productList = products.map((product) => {
       return (
-        <div className='product' key={product._id}>
+        <div className='product' key={product.id}>
           <h2>{product.name}</h2>
           <img src={img[product.id]} alt={product.name} />
           <p>Price: {product.price}</p>
-          <button onClick={() => handleAddToCart(product.id)}>Add to cart</button>
+          <button onClick={() => handleAddToCart(product)}>Add to cart</button>
         </div>
       )
     })

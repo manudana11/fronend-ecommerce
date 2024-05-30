@@ -8,6 +8,7 @@ import { ProductsProvider } from './context/ProductContext/ProductState'
 import Cart from './components/Cart/Cart'
 import Login from './components/LogIn/Login'
 import { UserPorivider } from './context/UserContext/UserState'
+import Profile from './components/Profile/Profile'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Route path='/products' element={<Products />} />
             <Route path='/cart' element={<Cart/>} />
             <Route path='/users/login' element={<Login/>} />
+            <Route path='/users/conecteduser' element={<Profile/>} />
           </Routes>
         </div>
         <Footer />
