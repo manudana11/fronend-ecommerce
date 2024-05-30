@@ -13,8 +13,14 @@ const users = (state, action) => {
         case 'CREATE_USER':
             return {
                 ...state,
-                createUser: [...state.createUser, action.payload],
+                createUser: action.payload,
             };
+        case 'LOGOUT':
+            return {
+                ...state,
+                token: '',
+                user: null,
+            }
         default:
             return state;
     }

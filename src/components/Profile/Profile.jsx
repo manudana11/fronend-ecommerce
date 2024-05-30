@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 import { UserContext } from '../../context/UserContext/UserState'
 import { Spin } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
-    const { getLoggedUserInfo, user, token } = useContext(UserContext);
+    const { getLoggedUserInfo, user, token, logout } = useContext(UserContext);
+    const navigate = useNavigate();
     useEffect(() => {
         getLoggedUserInfo();
     }, [token]);
@@ -39,6 +41,10 @@ const Profile = () => {
                     </div>
                 ))}
             </div>
+        <button onClick={() => {
+            logout();
+            navigate('/products');
+        }}>Sign off</button>
     </div>
   )
 }
