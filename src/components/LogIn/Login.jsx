@@ -17,6 +17,10 @@ const Login = () => {
         console.log('Failed:', errorInfo);
       };
 
+      const signup = () => {
+        navigate('/users/');
+      }
+
   return (
     <div>
         <Form
@@ -78,6 +82,8 @@ const Login = () => {
       </Button>
     </Form.Item>
   </Form>
+  <p>You don't have an account?</p>
+  <button onClick={signup}>Sign up</button>
     </div>
   )
 }

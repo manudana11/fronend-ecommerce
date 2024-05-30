@@ -9,6 +9,7 @@ import Cart from './components/Cart/Cart'
 import Login from './components/LogIn/Login'
 import { UserPorivider } from './context/UserContext/UserState'
 import Profile from './components/Profile/Profile'
+import Signup from './components/Signup/Signup'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
             <Route path='/cart' element={<Cart/>} />
             <Route path='/users/login' element={<Login/>} />
             <Route path='/users/conecteduser' element={<Profile/>} />
+            <Route path='/users/' element={<Signup/>} />
           </Routes>
         </div>
         <Footer />

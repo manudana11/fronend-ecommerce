@@ -10,6 +10,11 @@ const users = (state, action) => {
                 ...state,
                 user: action.payload,
             };
+        case 'CREATE_USER':
+            return {
+                ...state,
+                createUser: [...state.createUser, action.payload],
+            };
         default:
             return state;
     }
