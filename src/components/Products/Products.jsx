@@ -9,39 +9,42 @@ const getImgFromApi = async (query) => {
 }
 
 const Products = () => {
-    const {products, getProducts, addToCart} = useContext(ProductsContext);
-    const [img, setImg] = useState({});
-    useEffect(() => {
-        getProducts();
-    }, []);
-    useEffect(() => {
-      const fetchImg = async () => {
-        const newImg = {};
-        for (const product of products) {
-          const imgUrl = await getImgFromApi(product.name);
-          newImg[product.id] = imgUrl;
-        }
-        setImg(newImg);
-      };
-      fetchImg();
-    }, [products]);
+  const { products, getProducts, addToCart } = useContext(ProductsContext);
+  const [img, setImg] = useState({});
+  useEffect(() => {
+    getProducts();
+  }, []);
+  useEffect(() => {
+    const fetchImg = async () => {
+      const newImg = {};
+      for (const product of products) {
+        const imgUrl = await getImgFromApi(product.name);
+        newImg[product.id] = imgUrl;
+      }
+      setImg(newImg);
+    };
+    fetchImg();
+  }, [products]);
 
-    const handleAddToCart = (ProductId) => {
-      addToCart(ProductId);
-    }
-    const productList = products.map((product) => {
-      return (
-        <div className='product' key={product.id}>
-          <h2>{product.name}</h2>
-          <img src={img[product.id]} alt={product.name} />
-          <p>Price: {product.price}</p>
-          <button onClick={() => handleAddToCart(product)}>Add to cart</button>
-        </div>
-      )
-    })
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  }
+  const productList = products.map((product) => {
+    return (
+      <div className='product' key={product.id}>
+        <h2>{product.name}</h2>
+        <img src={img[product.id]} alt={product.name} />
+        <p>Categories: {product.Categories.map((category) => {
+          return category.name
+        })}</p>
+        <p>Price: {product.price}</p>
+        <button onClick={() => handleAddToCart(product)}>Add to cart</button>
+      </div>
+    )
+  })
   return (
     <>
-    {productList}
+      {productList}
     </>
   )
 }

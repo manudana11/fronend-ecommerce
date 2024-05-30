@@ -5,6 +5,7 @@ const Cart = () => {
   const { cart } = useContext(ProductsContext);
 
   const totalPrice = cart.reduce((acumulator, product) => acumulator + product.price, 0);
+  console.log(cart)
   return (
     <div className="cart">
             <h2>Shopping Cart</h2>

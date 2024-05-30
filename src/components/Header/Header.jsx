@@ -16,7 +16,6 @@ const Header = () => {
     <img src="https://cdn-icons-png.freepik.com/512/64/64573.png" alt="Login" />
   </Link>
 
-
   return (
     <header className="header">
       <div className="logo">
