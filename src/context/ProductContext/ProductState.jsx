@@ -34,6 +34,11 @@ export const ProductsProvider = ({children}) => {
             payload: i,
         });
     };
+    const clearCart = () => {
+        dispatch({
+            type: 'CLEAR_CART',
+        });
+    };
     return (
         <ProductsContext.Provider
             value={{
@@ -42,6 +47,7 @@ export const ProductsProvider = ({children}) => {
                 getProducts,
                 addToCart,
                 removeFromCart,
+                clearCart,
             }}>
                 {children}
             </ProductsContext.Provider>

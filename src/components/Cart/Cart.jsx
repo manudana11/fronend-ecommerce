@@ -5,7 +5,7 @@ import { UserContext } from '../../context/UserContext/UserState';
 import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
-  const { cart, removeFromCart } = useContext(ProductsContext);
+  const { cart, removeFromCart, clearCart } = useContext(ProductsContext);
   const { createOrder } = useContext(OrderContext);
   const { token, getLoggedUserInfo, user } = useContext(UserContext);
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const Cart = () => {
       navigate('/users/conecteduser');
       const cart = localStorage.getItem('Cart');
       localStorage.removeItem('Cart');
-      
+      clearCart();
     };
   return (
     <div className="cart">
