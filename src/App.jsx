@@ -11,6 +11,8 @@ import { UserPorivider } from './context/UserContext/UserState'
 import Profile from './components/Profile/Profile'
 import Signup from './components/Signup/Signup'
 import { OrderProvider } from './context/OrderContext/OrderState'
+import { CategoryProvider } from './context/CategoryContext/CategoryState'
+import GolfClubs from './components/GolfClubs/GolfClubs'
 
 function App() {
 
@@ -20,18 +22,21 @@ function App() {
       <ProductsProvider>
         <UserPorivider>
           <OrderProvider>
-        <Header />
-        <div className="content">
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/products' element={<Products />} />
-            <Route path='/cart' element={<Cart/>} />
-            <Route path='/users/login' element={<Login/>} />
-            <Route path='/users/conecteduser' element={<Profile/>} />
-            <Route path='/users/' element={<Signup/>} />
-          </Routes>
-        </div>
-        <Footer />
+            <CategoryProvider>
+              <Header />
+              <div className="content">
+                <Routes>
+                  <Route path='/' element={<Home />} />
+                  <Route path='/products' element={<Products />} />
+                  <Route path='/golfClubs' element={<GolfClubs />} />
+                  <Route path='/cart' element={<Cart/>} />
+                  <Route path='/users/login' element={<Login/>} />
+                  <Route path='/users/conecteduser' element={<Profile/>} />
+                  <Route path='/users/' element={<Signup/>} />
+                </Routes>
+              </div>
+              <Footer />
+            </CategoryProvider>
           </OrderProvider>
         </UserPorivider>
       </ProductsProvider>

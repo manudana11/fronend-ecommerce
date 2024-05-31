@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { ProductsContext } from '../../context/ProductContext/ProductState'
+import React from 'react'
 import Product from '../Product/Product';
 
 const Products = () => {

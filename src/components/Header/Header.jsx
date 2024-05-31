@@ -25,6 +25,7 @@ const Header = () => {
         <span><Link to="/">Home</Link></span>
         <span><Link to="/products">Products</Link></span>
         <span><Link to="/offers">Offers</Link></span>
+        <span><Link to="/golfClubs">Golf Clubs</Link></span>
       </nav>
       <div className="user-cart">
       {renderUserLink}
