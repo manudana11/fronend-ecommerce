@@ -24,11 +24,12 @@ const Cart = () => {
           ProductId: getProductsIds(),
           name: user.user.name
       };
-      createOrder(order, token);
-      navigate('/users/conecteduser');
-      const cart = localStorage.getItem('Cart');
-      localStorage.removeItem('Cart');
-      clearCart();
+      createOrder(order, token).then(() => {
+        navigate('/users/conecteduser');
+        const cart = localStorage.getItem('Cart');
+        localStorage.removeItem('Cart');
+        clearCart();
+      })
     };
   return (
     <div className="cart">

@@ -26,7 +26,7 @@ const Profile = () => {
                 <h3>Orders:</h3>
                 {user.user.Orders.map(order => (
                     <div key={order.id} className="order">
-                        <p>Amount: {order.amount}</p>
+                        <p>Amount: {order.amount} €</p>
                         <p>Status: {order.status}</p>
                         <p>Created At: {new Date(order.createdAt).toLocaleString()}</p>
                         <h4>Products:</h4>
