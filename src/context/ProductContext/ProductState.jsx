@@ -28,6 +28,12 @@ export const ProductsProvider = ({children}) => {
             payload: product,
         });
     };
+    const removeFromCart = (i) => {
+        dispatch({
+            type: 'REMOVE_FROM_CART',
+            payload: i,
+        });
+    };
     return (
         <ProductsContext.Provider
             value={{
@@ -35,6 +41,7 @@ export const ProductsProvider = ({children}) => {
                 cart: state.cart,
                 getProducts,
                 addToCart,
+                removeFromCart,
             }}>
                 {children}
             </ProductsContext.Provider>

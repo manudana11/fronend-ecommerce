@@ -11,7 +11,21 @@ const products = (state, action) => {
             return {
                 ...state,
                 cart: addProductToCart,
-            }
+            };
+        case "REMOVE_FROM_CART":
+                const filteredCart = state.cart.filter(
+                    (product, i) => i !== action.payload
+                );
+                localStorage.setItem('Cart', JSON.stringify(filteredCart));
+                return {
+                    ...state,
+                    cart: filteredCart,
+                };
+        case 'CLEAR_CART':
+            return {
+                ...state,
+                cart: [],
+            };
         default:
             return state;
     }
