@@ -3,7 +3,7 @@ const category = (state, action) => {
         case 'GET_PRODUCTS_CATEGORY_BY_ID':
             return {
                 ...state,
-                category: action.payload,
+                categoryById: action.payload,
             };
         default:
             return state;
