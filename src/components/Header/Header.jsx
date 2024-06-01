@@ -7,6 +7,7 @@ import { UserContext } from '../../context/UserContext/UserState'
 const Header = () => {
   const { cart } = useContext(ProductsContext);
   const { token } = useContext(UserContext);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const cartCounter = cart.length;
 
 
@@ -23,7 +24,12 @@ const Header = () => {
       </div>
       <nav className="nav-links">
         <span><Link to="/">Home</Link></span>
-        <span><Link to="/products">Products</Link></span>
+        <span onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}><Link to="/products">Products</Link>{isDropdownOpen && (
+            <div className="dropdown-content">
+              <Link to="/golfClubs">Golf Clubs</Link>
+              <Link to="/drivers">Drivers</Link>
+            </div>
+          )}</span>
         <span><Link to="/offers">Offers</Link></span>
         <span><Link to="/golfClubs">Golf Clubs</Link></span>
       </nav>

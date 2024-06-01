@@ -13,6 +13,7 @@ import Signup from './components/Signup/Signup'
 import { OrderProvider } from './context/OrderContext/OrderState'
 import { CategoryProvider } from './context/CategoryContext/CategoryState'
 import GolfClubs from './components/GolfClubs/GolfClubs'
+import Drivers from './components/Drivers/Drivers'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
                   <Route path='/' element={<Home />} />
                   <Route path='/products' element={<Products />} />
                   <Route path='/golfClubs' element={<GolfClubs />} />
+                  <Route path='/drivers' element={<Drivers />} />
                   <Route path='/cart' element={<Cart/>} />
                   <Route path='/users/login' element={<Login/>} />
                   <Route path='/users/conecteduser' element={<Profile/>} />
