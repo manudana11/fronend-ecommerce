@@ -78,6 +78,8 @@ ecommerce-golf/
 ├── package.json
 └── README.md
 
+
+
 ## Componentes Principales
 
 - **Header**: Encabezado de la aplicación con navegación y buscador.
