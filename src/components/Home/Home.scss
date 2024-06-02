@@ -1,0 +1,35 @@
+@import '../../colors.scss';
+
+.home-container {
+  text-align: center;
+  padding: 2rem;
+  background-color: $background-color;
+
+  .banner {
+    margin-bottom: 2rem;
+
+    .banner-image {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .category-section {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
