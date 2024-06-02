@@ -18,12 +18,12 @@ Este proyecto es un frontend para un ecommerce de golf, desarrollado con React. 
 
 1. Clona el repositorio:
     ```sh
-    git clone https://github.com/tu_usuario/ecommerce-golf.git
+    https://github.com/manudana11/fronend-ecommerce
     ```
 
 2. Instala las dependencias:
     ```sh
-    cd ecommerce-golf
+    cd fronend-ecommerce
     npm install
     ```
 
