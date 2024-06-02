@@ -30,7 +30,7 @@ const Signup = () => {
         navigate('/products');
     }
   return (
-    <form onSubmit={handleOnSubmit}>
+    <form onSubmit={handleOnSubmit} className='products-container'>
         <fieldset>
             <legend>Sign Up</legend>
             <label htmlFor="name">Name: </label>

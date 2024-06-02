@@ -50,7 +50,7 @@ const Product = () => {
   })
   console.log(img)
   return (
-    <div>
+    <div className="products-container">
       {productList}
     </div>
   );

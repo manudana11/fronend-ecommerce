@@ -1,0 +1,83 @@
+@import '../../colors.scss';
+
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: $background-color;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card {
+    padding: 1.5rem;
+    background-color: $secondary-color;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    text-align: left;
+
+    h2 {
+        margin-bottom: 1rem;
+        color: $primary-color;
+    }
+
+    p {
+        margin: 0.5rem 0;
+        color: $text-color;
+
+        strong {
+            color: $primary-color;
+        }
+    }
+}
+
+.orders-container {
+    margin-bottom: 2rem;
+
+    h2 {
+        margin-bottom: 1rem;
+        color: $primary-color;
+    }
+
+    .order-card {
+        padding: 1.5rem;
+        background-color: $secondary-color;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+
+        h3 {
+            margin-top: 1rem;
+            color: $accent-color;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #eee;
+
+                p {
+                    margin: 0.25rem 0;
+                }
+            }
+        }
+    }
+}
+
+.signoff-button {
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}

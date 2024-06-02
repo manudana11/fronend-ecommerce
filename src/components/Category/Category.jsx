@@ -41,7 +41,7 @@ const Category = ({categoryId, categoryName}) => {
     <div>
       <h1>{categoryName}</h1>
       {productList.length > 0 ? (
-        <div>{productList}</div>
+        <div className='products-container'>{productList}</div>
       ) : (
         <p>No products found for this category.</p>
       )}

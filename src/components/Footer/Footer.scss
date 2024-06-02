@@ -10,14 +10,10 @@ body {
   background-color: $primary-color;
   color: $secondary-color;
   padding: 20px 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: calc(100% - 100px); // Dejar 50px de margen a cada lado
-  margin: 0 50px;
-  z-index: 1000;
-
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+  
   .footer-container {
     display: flex;
     justify-content: space-around;

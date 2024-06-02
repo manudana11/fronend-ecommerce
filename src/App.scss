@@ -8,6 +8,19 @@
   background-color: $background-color;
   color: $text-color;
   padding-top: 180px;
+  flex: 1 0 auto;
+}
+
+.products-container {
+  padding-bottom: 17rem;
+}
+
+.product {
+  padding: 2em;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -44,4 +57,11 @@
 
 .read-the-docs {
   color: #888;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  text-align: center;
 }
