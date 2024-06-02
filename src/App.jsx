@@ -14,6 +14,11 @@ import { OrderProvider } from './context/OrderContext/OrderState'
 import { CategoryProvider } from './context/CategoryContext/CategoryState'
 import GolfClubs from './components/GolfClubs/GolfClubs'
 import Drivers from './components/Drivers/Drivers'
+import Irons from './components/Irons/Irons'
+import FairwayWoods from './components/FairwayWoods/FairwayWoods'
+import Wedges from './components/Wedges/Wedges'
+import Accessories from './components/Accessories/Accessories'
+import Balls from './components/Balls/Balls'
 
 function App() {
 
@@ -30,7 +35,12 @@ function App() {
                   <Route path='/' element={<Home />} />
                   <Route path='/products' element={<Products />} />
                   <Route path='/golfClubs' element={<GolfClubs />} />
+                  <Route path='/irons' element={<Irons />} />
+                  <Route path='/fairwayWoods' element={<FairwayWoods />} />
                   <Route path='/drivers' element={<Drivers />} />
+                  <Route path='/wedges' element={<Wedges />} />
+                  <Route path='/accessories' element={<Accessories />} />
+                  <Route path='/balls' element={<Balls />} />
                   <Route path='/cart' element={<Cart/>} />
                   <Route path='/users/login' element={<Login/>} />
                   <Route path='/users/conecteduser' element={<Profile/>} />

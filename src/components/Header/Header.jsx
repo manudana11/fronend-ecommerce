@@ -27,7 +27,12 @@ const Header = () => {
         <span onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}><Link to="/products">Products</Link>{isDropdownOpen && (
             <div className="dropdown-content">
               <Link to="/golfClubs">Golf Clubs</Link>
+              <Link to="/irons">Irons</Link>
+              <Link to="/fairwayWoods">Fairway Woods</Link>
               <Link to="/drivers">Drivers</Link>
+              <Link to="/wedges">Wedges</Link>
+              <Link to="/accessories">Accessories</Link>
+              <Link to="/balls">Balls</Link>
             </div>
           )}</span>
         <span><Link to="/offers">Offers</Link></span>

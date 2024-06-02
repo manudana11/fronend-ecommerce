@@ -1,8 +1,13 @@
+@import './colors.scss';
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: $background-color;
+  color: $text-color;
+  padding-top: 180px;
 }
 
 .logo {
@@ -12,10 +17,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em $link-hover-color);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em $link-color);
 }
 
 @keyframes logo-spin {

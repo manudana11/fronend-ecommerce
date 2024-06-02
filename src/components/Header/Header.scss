@@ -1,3 +1,5 @@
+@import '../../colors';
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -9,26 +11,60 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
+  background-color: $primary-color;
+  color: $secondary-color;
+  width: calc(100% - 100px); // Dejar 50px de margen a cada lado
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 
   .logo {
     img {
-      width: 100px; // Ajusta el tamaño según sea necesario
+      width: 100px;
     }
   }
 
   .nav-links {
     display: flex;
     align-items: center;
+    position: relative;
 
     span {
       margin: 0 15px;
-      
+      position: relative;
+
       a {
         text-decoration: none;
-        color: #fff;
+        color: $secondary-color;
         font-size: 18px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: $primary-color;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+
+        a {
+          color: $secondary-color;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+
+          &:hover {
+            background-color: $link-hover-color;
+          }
+        }
+      }
+
+      &:hover .dropdown-content {
+        display: block;
       }
     }
   }
@@ -40,7 +76,7 @@ body {
     a {
       margin-left: 20px;
       position: relative;
-      
+
       img {
         width: 24px;
         height: 24px;
@@ -52,8 +88,8 @@ body {
         position: absolute;
         top: -5px;
         right: -10px;
-        background-color: #f00;
-        color: #fff;
+        background-color: $accent-color;
+        color: $secondary-color;
         border-radius: 50%;
         padding: 2px 6px;
         font-size: 12px;
