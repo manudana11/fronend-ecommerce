@@ -22,11 +22,8 @@ const Product = () => {
   useEffect(() => {
     const imageUrl = {};
     products.forEach((product) => {
-      console.log("Processing product:", product); // Verificar los datos del producto
       const lastCategory = product.Categories[product.Categories.length - 1];
-      console.log("Last category ID:", lastCategory); // Verificar el ID de la última categoría
       const imgUrl = categoryImageMap[lastCategory.name] || '';
-      console.log("Image URL:", imgUrl); // Verificar la URL de la imagen
       imageUrl[product.id] = imgUrl;
     });
     setImg(imageUrl);
@@ -48,7 +45,6 @@ const Product = () => {
       </div>
     )
   })
-  console.log(img)
   return (
     <div className="products-container">
       {productList}

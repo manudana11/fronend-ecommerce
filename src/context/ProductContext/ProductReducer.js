@@ -26,6 +26,11 @@ const products = (state, action) => {
                 ...state,
                 cart: [],
             };
+        case 'SEARCH_PRODUCTS':
+            return {
+                ...state,
+                searchResults: action.payload
+            };
         default:
             return state;
     }

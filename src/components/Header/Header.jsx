@@ -5,21 +5,14 @@ import { ProductsContext } from '../../context/ProductContext/ProductState'
 import { UserContext } from '../../context/UserContext/UserState'
 
 const Header = () => {
-  const { cart } = useContext(ProductsContext);
+  const { cart, searchProducts, searchResults, addToCart } = useContext(ProductsContext);
   const { token } = useContext(UserContext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
   const cartCounter = cart.length;
 
-  const handleSearch = async () => {
-    try {
-      const res = await fetch(`http://localhost:3000/products/name/${searchTerm}`);
-      const data = await res.json();
-      setSearchResults(data);
-    } catch (error) {
-      console.error(error);
-    }
+  const handleSearch = () => {
+    searchProducts(searchTerm);
   }
 
   const renderUserLink = token ? <Link to="/users/conecteduser" className="user-icon">
@@ -55,6 +48,18 @@ const Header = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button onClick={handleSearch}>Search</button>
+        {searchResults.length > 0 && (
+          <div className="search-results">
+            {searchResults.map((product) => (
+              <div key={product.id} className="search-result-item">
+                <Link to={`/products/${product.id}`}>
+                  {product.name}
+                </Link>
+                <button onClick={() => addToCart(product)}>Añadir al carrito</button>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       <div className="user-cart">
       {renderUserLink}

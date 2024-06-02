@@ -3,6 +3,7 @@ import { ProductsContext } from '../../context/ProductContext/ProductState'
 import { OrderContext } from '../../context/OrderContext/OrderState'
 import { UserContext } from '../../context/UserContext/UserState';
 import { useNavigate } from 'react-router-dom';
+import './Cart.scss';
 
 const Cart = () => {
   const { cart, removeFromCart, clearCart } = useContext(ProductsContext);
