@@ -77,7 +77,7 @@ ecommerce-golf/
 ├── .gitignore
 ├── package.json
 └── README.md
-
+```
 
 
 ## Componentes Principales
