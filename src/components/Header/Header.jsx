@@ -8,8 +8,19 @@ const Header = () => {
   const { cart } = useContext(ProductsContext);
   const { token } = useContext(UserContext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
   const cartCounter = cart.length;
 
+  const handleSearch = async () => {
+    try {
+      const res = await fetch(`http://localhost:3000/products/name/${searchTerm}`);
+      const data = await res.json();
+      setSearchResults(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   const renderUserLink = token ? <Link to="/users/conecteduser" className="user-icon">
     <img src="https://cdn-icons-png.freepik.com/512/64/64573.png" alt="Usuario" />
@@ -35,9 +46,16 @@ const Header = () => {
               <Link to="/balls">Balls</Link>
             </div>
           )}</span>
-        <span><Link to="/offers">Offers</Link></span>
-        <span><Link to="/golfClubs">Golf Clubs</Link></span>
       </nav>
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button onClick={handleSearch}>Search</button>
+      </div>
       <div className="user-cart">
       {renderUserLink}
         <Link to="/cart" className="cart-icon">

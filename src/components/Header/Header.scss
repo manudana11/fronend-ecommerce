@@ -13,7 +13,8 @@ body {
   padding: 10px 20px;
   background-color: $primary-color;
   color: $secondary-color;
-  width: calc(100% - 100px); // Dejar 50px de margen a cada lado
+  width: calc(100% - 100px);
+  height: 80px;
   margin: 0 auto;
   position: fixed;
   top: 0;
@@ -23,6 +24,7 @@ body {
 
   .logo {
     img {
+      margin-top: 15px;
       width: 100px;
     }
   }
@@ -72,9 +74,10 @@ body {
   .user-cart {
     display: flex;
     align-items: center;
+    margin-right: 130px;
 
     a {
-      margin-left: 20px;
+      margin-left: 40px;
       position: relative;
 
       img {
